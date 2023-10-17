@@ -1,0 +1,21 @@
+name: 'Cloud Pipeline'
+author: 'Natalia'
+description: 'Cloud Pipeline'
+inputs:
+  LANGUAGE_VERSION:
+    description: 'LANGUAGE_VERSION'
+    required: true  
+runs:
+  using: 'composite'
+  steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      
+      - name: Setup PHP ${{ inputs.LANGUAGE_VERSION }}
+        uses: rodrigocamposbr/teste/.github/actions/php@main
+        with:
+          LANGUAGE_VERSION: ${{ inputs.LANGUAGE_VERSION }} 
+      - name: php version
+        shell: bash
+        run: |
+          php -v
