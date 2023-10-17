@@ -5,6 +5,4 @@ inputs:
     required: true  
 runs:
   using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - "LANGUAGE_VERSION=${{ inputs.LANGUAGE_VERSION }}"
+  image: 'docker://php:${{ inputs.LANGUAGE_VERSION }}-alpine'
