@@ -7,4 +7,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.LANGUAGE_VERSION }}
+    - "LANGUAGE_VERSION=${{ inputs.LANGUAGE_VERSION }}"
