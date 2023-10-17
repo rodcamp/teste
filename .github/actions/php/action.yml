@@ -3,8 +3,11 @@ inputs:
   LANGUAGE_VERSION:
     description: 'LANGUAGE_VERSION'
     required: true  
+  COMANDOS:
+    description: 'COMANDOS'
 runs:
   using: 'docker'
   image: "Dockerfile"
   args:
     - ${{ inputs.LANGUAGE_VERSION }}
+    - ${{ inputs.COMANDOS }}
