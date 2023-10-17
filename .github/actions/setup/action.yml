@@ -15,7 +15,5 @@ runs:
         uses: rodrigocamposbr/teste/.github/actions/php@main
         with:
           LANGUAGE_VERSION: ${{ inputs.LANGUAGE_VERSION }} 
-      - name: php version
-        shell: bash
         run: |
           php -v
