@@ -1,0 +1,16 @@
+name : PHP
+on:
+    workflow_dispatch:
+      inputs:
+        LANGUAGE_VERSION: 
+          required: true
+          type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: php
+        uses: rodrigocamposbr/teste/.github/actions/setup@main
+        with:
+          LANGUAGE_VERSION: ${{inputs.LANGUAGE_VERSION}}
