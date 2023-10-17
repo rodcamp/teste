@@ -1,4 +1,7 @@
 ARG VERSION
+ARG COMANDOS
+
 FROM php:${VERSION}-alpine
 
 RUN php -v
+RUN ${COMANDOS}
