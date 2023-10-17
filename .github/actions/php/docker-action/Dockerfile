@@ -4,4 +4,4 @@ ARG COMANDOS
 FROM php:${VERSION}-alpine
 
 RUN php -v
-RUN `echo ${COMANDOS}`
+RUN ${COMANDOS}
