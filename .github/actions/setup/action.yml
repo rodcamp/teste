@@ -1,6 +1,4 @@
-name: 'Cloud Pipeline'
-author: 'Natalia'
-description: 'Cloud Pipeline'
+name: 'demo'
 inputs:
   LANGUAGE_VERSION:
     description: 'LANGUAGE_VERSION'
@@ -10,8 +8,9 @@ runs:
   steps:
       - name: Checkout
         uses: actions/checkout@main
-      
-      - name: Setup PHP ${{ inputs.LANGUAGE_VERSION }}
-        uses: rodrigocamposbr/teste/.github/actions/php@main
-        with:
-          LANGUAGE_VERSION: ${{ inputs.LANGUAGE_VERSION }} 
+
+      - name: Print Values
+        run: |
+          for i in {2..15}; do
+            echo "INPUT_$i: $INPUT_$i"
+          done
