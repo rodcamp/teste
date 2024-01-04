@@ -1,8 +1,20 @@
 name: 'demo'
 inputs:
-  LANGUAGE_VERSION:
-    description: 'LANGUAGE_VERSION'
-    required: true  
+  INPUT_1:        
+  INPUT_2:
+  INPUT_3:
+  INPUT_4:
+  INPUT_5:
+  INPUT_6:          
+  INPUT_7:
+  INPUT_8:          
+  INPUT_9:
+  INPUT_10:
+  INPUT_11:
+  INPUT_12:          
+  INPUT_13:
+  INPUT_14:
+  INPUT_15:  
 runs:
   using: 'composite'
   steps:
