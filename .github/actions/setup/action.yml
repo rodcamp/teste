@@ -10,6 +10,7 @@ runs:
         uses: actions/checkout@main
 
       - name: Print Values
+        shell: bash
         run: |
           for i in {2..15}; do
             echo "INPUT_$i: $INPUT_$i"
