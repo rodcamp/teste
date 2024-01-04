@@ -1,12 +1,6 @@
-name : PHP
+name : demo
 on:
     workflow_dispatch:
-      inputs:
-        LANGUAGE_VERSION: 
-          required: true
-          type: string
-        COMANDOS:
-          type: string
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,4 +8,18 @@ jobs:
       - name: php
         uses: rodrigocamposbr/teste/.github/actions/setup@main
         with:
-          LANGUAGE_VERSION: ${{inputs.LANGUAGE_VERSION}}
+          INPUT_1: 1          
+          INPUT_2: 2
+          INPUT_3: 3
+          INPUT_4: 4
+          INPUT_5: 5
+          INPUT_6: 6          
+          INPUT_7: 7
+          INPUT_8: 8          
+          INPUT_9: 9
+          INPUT_10: 10
+          INPUT_11: 11
+          INPUT_12: 12          
+          INPUT_13: 13
+          INPUT_14: 14
+          INPUT_15: 15         
