@@ -39,6 +39,6 @@ runs:
       - name: Print Values
         shell: bash
         run: |
-          for i in {2..15}; do
+          for i in {1..15}; do
             echo "INPUT_$i: $INPUT_$i"
           done
