@@ -28,4 +28,5 @@ jobs:
           INPUT_12: 12          
           INPUT_13: 13
           INPUT_14: 14
-          INPUT_15: 15         
+          INPUT_15: 15    
+          cloud: ${{ inputs.cloud }}     
