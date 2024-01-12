@@ -1,4 +1,4 @@
-name: 'lambda'
+name: 'LAMBDA'
 runs:
   using: 'composite'
   steps:

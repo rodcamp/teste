@@ -1,43 +1,8 @@
-name: 'demo'
-inputs:
-  INPUT_1:   
-    description: 'xpto'
-  INPUT_2:
-    description: 'xpto'  
-  INPUT_3:
-    description: 'xpto'  
-  INPUT_4:
-    description: 'xpto'  
-  INPUT_5:
-    description: 'xpto'  
-  INPUT_6:          
-    description: 'xpto'  
-  INPUT_7:
-    description: 'xpto'  
-  INPUT_8:          
-    description: 'xpto'  
-  INPUT_9:
-    description: 'xpto'  
-  INPUT_10:
-    description: 'xpto'  
-  INPUT_11:
-    description: 'xpto'  
-  INPUT_12:          
-     description: 'xpto' 
-  INPUT_13:
-    description: 'xpto'  
-  INPUT_14:
-    description: 'xpto'  
-  INPUT_15:  
-    description: 'xpto'  
-  cloud: 
-    description: 'cloud'
+name: 'ECS'
 runs:
   using: 'composite'
   steps:
-      - name: Print Values
+      - name: ECS
         shell: bash
         run: |
-          for i in {1..15}; do
-            echo "INPUT_$i: $INPUT_$i"
-          done
+          echo "ECS"    

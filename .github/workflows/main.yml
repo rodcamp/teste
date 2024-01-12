@@ -17,19 +17,4 @@ jobs:
         #if: ${{ endsWith(inputs.cloud, ':aws') }}
         uses: rodrigocamposbr/teste/@main
         with:
-          INPUT_1: 1          
-          INPUT_2: 2
-          INPUT_3: 3
-          INPUT_4: 4
-          INPUT_5: 5
-          INPUT_6: 6          
-          INPUT_7: 7
-          INPUT_8: 8          
-          INPUT_9: 9
-          INPUT_10: 10
-          INPUT_11: 11
-          INPUT_12: 12          
-          INPUT_13: 13
-          INPUT_14: 14
-          INPUT_15: 15    
           cloud: ${{ inputs.cloud }}
