@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
-            
-      - name: php
+
+      - name: AWS
         if: ${{ startsWith(inputs.cloud, 'aws:') }}
         #if: ${{ endsWith(inputs.cloud, ':aws') }}
         uses: rodrigocamposbr/teste/.github/actions/setup@main
@@ -32,4 +32,4 @@ jobs:
           INPUT_13: 13
           INPUT_14: 14
           INPUT_15: 15    
-          cloud: ${{ inputs.cloud }}     
+          cloud: ${{ inputs.cloud }}

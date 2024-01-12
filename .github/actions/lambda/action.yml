@@ -1,0 +1,8 @@
+name: 'lambda'
+runs:
+  using: 'composite'
+  steps:
+      - name: LAMBDA
+        shell: bash
+        run: |
+          echo "LAMBDA"          
