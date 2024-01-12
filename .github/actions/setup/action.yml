@@ -55,8 +55,7 @@ runs:
           INPUT_14: ${{ inputs.INPUT_14 }} 
           INPUT_15: ${{ inputs.INPUT_15 }}
           
-      - name: Setup
-        uses: ./setup.yml
+      - name: LAMBDA
         if: ${{ endsWith(inputs.cloud, ':lambda') }}
         shell: bash
         run: |
