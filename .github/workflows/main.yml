@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: php
         #if: ${{ startsWith(inputs.cloud, 'aws:') }}
-        if: ${{ endsWith(inputs.cloud, ':ecs') }}
+        if: ${{ endsWith(inputs.cloud, ':aws') }}
         uses: rodrigocamposbr/teste/.github/actions/setup@main
         with:
           INPUT_1: 1          
