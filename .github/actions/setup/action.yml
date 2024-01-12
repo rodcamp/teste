@@ -35,11 +35,8 @@ inputs:
 runs:
   using: 'composite'
   steps:
-      - name: Checkout
-        uses: actions/checkout@main
-
       - name: Setup
-        uses: ./setup.yml
+        uses: rodrigocamposbr/teste/.github/actions/ecs@main
         if: ${{ endsWith(inputs.cloud, ':ecs') }}
         with:
           INPUT_1: ${{ inputs.INPUT_1 }}        

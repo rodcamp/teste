@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@main
+            
       - name: php
         if: ${{ startsWith(inputs.cloud, 'aws:') }}
         #if: ${{ endsWith(inputs.cloud, ':aws') }}
