@@ -15,7 +15,7 @@ jobs:
       - name: AWS
         if: ${{ startsWith(inputs.cloud, 'aws:') }}
         #if: ${{ endsWith(inputs.cloud, ':aws') }}
-        uses: rodrigocamposbr/teste/.github/actions/setup@main
+        uses: rodrigocamposbr/teste/@main
         with:
           INPUT_1: 1          
           INPUT_2: 2
