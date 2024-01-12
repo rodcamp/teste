@@ -15,6 +15,6 @@ jobs:
       - name: AWS
         if: ${{ startsWith(inputs.cloud, 'aws:') }}
         #if: ${{ endsWith(inputs.cloud, ':aws') }}
-        uses: rodrigocamposbr/teste/@${{ vars.AWS_LIBRARY_VERSION }}
+        uses: rodrigocamposbr/teste/@main
         with:
           cloud: ${{ inputs.cloud }}
