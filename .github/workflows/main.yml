@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: php
-        if: ${{ startsWith(inputs.cloud, 'aws:') }}
+        #if: ${{ startsWith(inputs.cloud, 'aws:') }}
+        if: ${{ endsWith(inputs.cloud, ':ecs') }}
         uses: rodrigocamposbr/teste/.github/actions/setup@main
         with:
           INPUT_1: 1          
