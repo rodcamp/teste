@@ -1,11 +1,16 @@
 name : demo
 on:
     workflow_dispatch:
+      inputs:
+        cloud:
+          type: string
+          default: "aws:ecs"
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: php
+        if: ${{ split(':', inputs.cloud)[0] == 'aws' }}
         uses: rodrigocamposbr/teste/.github/actions/setup@main
         with:
           INPUT_1: 1          
