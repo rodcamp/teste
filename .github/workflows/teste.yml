@@ -23,7 +23,7 @@ jobs:
       run: |
         INPUT_ARRAY=(${{ toJson(inputs.role-to-assume) }})
         AMBIENTE=$(echo "$INPUT_ARRAY" | jq -r .dev)
-        echo "ROLE_ARN=ROLE_ARN_${AMBIENTE,,}" >> $GITHUB_ENV
+        echo "ROLE_ARN=${AMBIENTE}" >> $GITHUB_ENV
 
     - name: Usar variável de ambiente
       run: echo "Usando ROLE_ARN: $ROLE_ARN"
