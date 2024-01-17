@@ -1,19 +1,16 @@
 name: Exemplo de GitHub Action
 
 on:
-  push:
-    branches:
-      - main
-
-jobs:
-  exemplo-job:
-    runs-on: ubuntu-latest
-
+  workflow_dispatch:
     inputs:
       role-to-assume:
         description: 'Lista de pares ambiente-role'
         required: true
         default: '{"dev": "role-dev", "prd": "role-prd"}'
+
+jobs:
+  exemplo-job:
+    runs-on: ubuntu-latest
 
     steps:
     - name: Configurar ambiente
