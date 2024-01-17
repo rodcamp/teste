@@ -29,4 +29,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Usar variável de ambiente
-      run: echo $ROLE_ARN      
+      run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY  
