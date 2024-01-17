@@ -1,0 +1,29 @@
+name: Exemplo de GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  exemplo-job:
+    runs-on: ubuntu-latest
+
+    inputs:
+      role-to-assume:
+        description: 'Lista de pares ambiente-role'
+        required: true
+        default: '{"dev": "role-dev", "prd": "role-prd"}'
+
+    steps:
+    - name: Configurar ambiente
+      run: echo "Configurando ambiente"
+
+    - name: Obter valores do input
+      run: |
+        INPUT_ARRAY=(${{ toJson(inputs.role-to-assume) }})
+        AMBIENTE=$(echo "$INPUT_ARRAY" | jq -r .dev)
+        echo "ROLE_ARN=ROLE_ARN_${AMBIENTE,,}" >> $GITHUB_ENV
+
+    - name: Usar variável de ambiente
+      run: echo "Usando ROLE_ARN: $ROLE_ARN"
