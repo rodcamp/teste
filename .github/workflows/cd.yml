@@ -23,7 +23,7 @@ jobs:
         with:
           path: |
             /var/lib/docker/image
-          key: ci-docker-${{ runner.os }}-${{ hashFiles('**/*.dockerfile') }}
+          key: ci-docker-${{ runner.os }}-${{ hashFiles('**/Dockerfile') }}
           restore-keys: |
             ci-docker-${{ runner.os }}-
 
@@ -39,7 +39,7 @@ jobs:
         with:
           path: |
             /var/lib/docker/image
-          key: ci-docker-${{ runner.os }}-${{ hashFiles('**/*.dockerfile') }}
+          key: ci-docker-${{ runner.os }}-${{ hashFiles('**/Dockerfile') }}
 
       - name: Push Docker image
         env:
