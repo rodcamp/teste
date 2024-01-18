@@ -1,0 +1,49 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        env:
+          IMAGE_TAG: ${{ github.sha }}      
+        run: docker build -t my-image:$IMAGE_TAG .
+
+      - name: Save Docker image to cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            /var/lib/docker/image
+          key: ci-docker-${{ runner.os }}-${{ hashFiles('**/*.dockerfile') }}
+          restore-keys: |
+            ci-docker-${{ runner.os }}-
+
+  cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Restore Docker image from cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            /var/lib/docker/image
+          key: ci-docker-${{ runner.os }}-${{ hashFiles('**/*.dockerfile') }}
+
+      - name: Push Docker image
+        env:
+          IMAGE_TAG: ${{ github.sha }}      
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+          docker push my-image:$IMAGE_TAG
