@@ -3,10 +3,6 @@ name: Exemplo de GitHub Action
 on:
   workflow_dispatch:
     inputs:
-      role-to-assume:
-        description: 'Lista de pares ambiente-role'
-        required: true
-        default: '{"dev": "role-dev", "prd": "role-prd"}'
       container:
         default: ubuntu:latest
 
@@ -22,12 +18,9 @@ jobs:
 
     - name: Obter valores do input
       run: |
-        INPUT_ARRAY=(${{ toJson(inputs.role-to-assume) }})
-        AMBIENTE=$(echo "$INPUT_ARRAY" | jq -r .dev)
-        echo "ROLE_ARN=${AMBIENTE}" >> "$GITHUB_ENV"
-
-    - name: Usar variável de ambiente
-      run: echo $ROLE_ARN
+        cat /etc/*-release
+        date
+        uname
 
   exemplo-2:
     runs-on: ubuntu-latest
