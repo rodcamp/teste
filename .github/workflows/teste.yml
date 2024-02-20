@@ -13,7 +13,8 @@ on:
 jobs:
   exemplo-job:
     runs-on: ubuntu-latest
-    container: ${ inputs.container }
+    container: 
+      image: ${ inputs.container }
 
     steps:
     - name: Configurar ambiente
