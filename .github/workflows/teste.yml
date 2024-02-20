@@ -7,10 +7,13 @@ on:
         description: 'Lista de pares ambiente-role'
         required: true
         default: '{"dev": "role-dev", "prd": "role-prd"}'
+      container:
+        default: ubuntu:latest
 
 jobs:
   exemplo-job:
     runs-on: ubuntu-latest
+    container: ${ inputs.container }
 
     steps:
     - name: Configurar ambiente
