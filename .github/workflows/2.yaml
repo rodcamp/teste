@@ -1,0 +1,56 @@
+name : demo
+on:
+    workflow_dispatch:
+      inputs:
+        INPUT_1:
+          default: "xpto"
+        INPUT_2:
+          default: "xpto"
+        INPUT_3:
+          default: "xpto"
+        INPUT_4:
+          default: "xpto"
+        INPUT_5:
+          default: "xpto"
+        INPUT_6:
+          default: "xpto"
+        INPUT_7:
+          default: "xpto"
+        INPUT_8:
+          default: "xpto"          
+        INPUT_9:
+          default: "xpto"          
+        INPUT_10:
+          default: "xpto"          
+        INPUT_11:
+          default: "xpto"          
+        INPUT_12:
+          default: "xpto"          
+        INPUT_13:
+          default: "xpto"          
+        INPUT_14:
+          default: "xpto"          
+        INPUT_15:
+          default: "xpto"          
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: php
+        uses: rodrigocamposbr/teste/.github/actions/setup@main
+        with:
+          INPUT_1: ${{ inputs.INPUT_1 }}     
+          INPUT_2: ${{ inputs.INPUT_2 }}     
+          INPUT_3: ${{ inputs.INPUT_3 }}     
+          INPUT_4: ${{ inputs.INPUT_4 }}     
+          INPUT_5: ${{ inputs.INPUT_5 }}     
+          INPUT_6: ${{ inputs.INPUT_6 }}     
+          INPUT_7: ${{ inputs.INPUT_7 }}     
+          INPUT_8: ${{ inputs.INPUT_8 }}     
+          INPUT_9: ${{ inputs.INPUT_9 }}     
+          INPUT_10: ${{ inputs.INPUT_10 }}     
+          INPUT_11: ${{ inputs.INPUT_11 }}     
+          INPUT_12: ${{ inputs.INPUT_12 }}     
+          INPUT_13: ${{ inputs.INPUT_13 }}     
+          INPUT_14: ${{ inputs.INPUT_14 }}     
+          INPUT_15: ${{ inputs.INPUT_15 }}
